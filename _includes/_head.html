@@ -1,0 +1,470 @@
+{% comment %}
+#
+#   Liquid variables are created at the top to keep the source DRY and clean.
+#   Idea by ericcarlisle.com
+#
+#   Variables › {{ url }} › site.url
+#   Variables › {{ description }} › site.description
+#   Variables › {{ title }} › site.title
+#
+{% endcomment %}{% capture ignore %}
+
+{{ site.url }}
+
+{% capture description %}{% if page.meta_description %}{{ page.meta_description }}{% elsif page.teaser %}{{ page.teaser }}{% elsif page.excerpt %}{{ page.excerpt }}{% elsif site.description %}{{ site.description }}{% endif %}{% endcapture %}
+{% assign description = description | strip_html | escape | strip %}
+
+{% capture title %}{% if page.meta_title %}{{ page.meta_title}}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title | strip_html | strip }}{% endif %}{% endcapture %}
+
+{% assign title = title | strip_html | escape | strip_newlines %}
+
+{% endcapture %}<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Help Detained Children | Help Reunite Detained and Separated Families</title>
+	
+    <link rel="stylesheet" type="text/css" href="{{ url }}/assets/css/styles_feeling_responsive.css">
+
+  {% if site.asciidoctor-enabled == true %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
+  {% endif %}
+
+	<script src="{{ url }}/assets/js/modernizr.min.js"></script>
+
+	
+         <!-- Google - Google Fonts -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: [ 'Lato:400,700,400italic:latin', 'Montserrat:400,800', 'Volkhov::latin' ]
+			}
+		});
+	</script>
+
+       <noscript>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel='stylesheet' type='text/css'>
+      </noscript>
+
+	<noscript>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+	</noscript>
+
+
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123814653-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-123814653-1');
+        </script>
+
+
+        <!-- Schema.org for Google LD-JSON -->
+<script type="application/ld+json">
+{
+  "@context": {
+    "@vocab": "http://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "https://helpdetainedchildren.org",
+      "@type": "Consortium",
+      "name": "HELP DETAINED CHILDREN",
+	     "url" : "https://helpdetainedchildren.org",
+      "description": "Help Detained Children is a directory of organizations working to reunite families that are separated and detained by ICE. How can you help too?",
+	     "logo" : "https://helpdetainedchildren.org/images/logohdc.png",
+	     "image" : "https://helpdetainedchildren.org/images//logohdc.png",
+      "sameAs" : [ "https://twitter.com/helpdetainedkds" ]
+    },
+    {
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+				"name": "ACLU BORDER RIGHTS CENTER",
+				"url": "https://www.aclutx.org/en/campaigns/border-rights-center",
+				"description": "The ACLU Border Rights Center defends the rights of border communities under the US Constitution.",
+    "image" : "https://helpdetainedchildren.org/images/widget-1-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-1-302x182.jpg",
+      "sameAs": ["https://twitter.com/aclu_brc", "https://www.facebook.com/ACLUofTexas/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "RAICES",
+				 "url": "https://www.raicestexas.org/",
+				 "description": "RAICES provides free and low-cost legal services to underserved immigrant children, families, and refugees in Texas.",
+     "image" : "https://helpdetainedchildren.org/images/widget-2-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-2-302x182.jpg",
+      "sameAs": ["https://twitter.com/RAICESTEXAS", "https://www.facebook.com/raicestexas/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "IMMIGRANT FAMILIES TOGETHER",
+				 "url": "https://immigrantfamiliestogether.com/",
+				 "description": "Immigrant Families Together provides free social and legal services, focusing on unifying separated and detained families.",
+     "image" : "https://helpdetainedchildren.org/images/widget-14-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-14-302x182.jpg",
+      "sameAs": ["https://twitter.com/ImmFamTogether", "https://www.facebook.com/ImmigrantFamiliesTogether/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "KIND- KIDS IN NEED OF DEFENSE",
+				 "url": "https://supportkind.org/",
+				 "description": "Kids in Need of Defense provides free social and legal services to unaccompanied children in deportation proceedings.",
+     "image" : "https://helpdetainedchildren.org/images/widget-4-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-4-302x182.jpg",
+      "sameAs": ["https://twitter.com/supportKIND", "https://www.facebook.com/supportkind/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "THE YOUNG CENTER",
+				 "url": "https://www.theyoungcenter.org/",
+				 "description": "The Young Center Child Advocacy Program provides free legal and social services to unaccompanied immigrant children.",
+     "image" : "https://helpdetainedchildren.org/images/widget-5-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-5-302x182.jpg",
+      "sameAs": ["https://twitter.com/TheYoungCenter", "http://facebook.com/TheYoungCenter/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "ANNUNCIATION HOUSE",
+			 	"url": "https://annunciationhouse.org/",
+			 	"description": "Annunciation House shelters families for free who were detained and separated by ICE on the El Paso/Juarez border.",
+     "image" : "https://helpdetainedchildren.org/images/widget-21-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-21-302x182.jpg",
+      "sameAs": ["https://twitter.com/ahouseelpaso", "https://www.facebook.com/AnnunciationHouse/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+    "name": "NATIONAL IMMIGRANT JUSTICE CENTER",
+				 "url": "http://www.immigrantjustice.org/",
+				 "description": "The National Immigrant Justice Center provides free legal services to immigrants, refugees and asylum seekers.",
+     "image" : "https://helpdetainedchildren.org/images/widget-16-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-16-302x182.jpg",
+      "sameAs": ["https://twitter.com/nijc", "https://www.facebook.com/immigrantjustice/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "AMERICAN GATEWAYS",
+				 "url": "http://www.americangateways.org/",
+				 "description": "American Gateways provides community outreach and free legal and social services to immigrants in the Central Texas area.",
+     "image" : "https://helpdetainedchildren.org/images/widget-8-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-8-302x182.jpg",
+      "sameAs": ["https://twitter.com/amergateways", "https://www.facebook.com/americangateways/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "TEXAS CIVIL RIGHTS PROJECT",
+			 	"url": "https://texascivilrightsproject.org/action/",
+			 	"description": "The Texas Civil Rights Project provides free legal services and is working to reunify all remaining detained children.",
+     "image" : "https://helpdetainedchildren.org/images/widget-9-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-9-302x182.jpg",
+      "sameAs": ["https://twitter.com/tXCivilRights", "https://www.facebook.com/TexasCivilRightsProject/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "DIOCESAN MIGRANT AND REFUGEE SERVICES",
+		 		"url": "http://www.elpasodiocese.org/diocesan-migrant--refugee-services-inc.html",
+	 			"description": "Diocesan Migrant and Refugee Services is a comprehensive free Legal Aid clinic serving immigrants and refugees in El Paso, TX.",
+     "image" : "https://helpdetainedchildren.org/images/widget-20-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-20-302x182.jpg",
+      "sameAs": ["https://twitter.com/elpasodmrs", "https://www.facebook.com/DMRSInc/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "LAS AMERICAS IMMIGRANT ADVOCACY CENTER",
+		 		"url": "http://las-americas.org/",
+     "description": "Las Americas provides free legal/social services to refugees, asylum seekers and families seeking reunification in El Paso, TX.",
+     "image" : "https://helpdetainedchildren.org/images/widget-19-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-19-302x182.jpg",
+      "sameAs": ["https://twitter.com/lasamericasiac", "https://www.facebook.com/lasamericasIAC/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+    "name": "THE FLORENCE IMMIGRANTS AND REFUGEE RIGHTS PROJECT",
+				"url": "https://firrp.org/",
+				"description": "The Florence Immigrants and Refugee Rights Project provides free legal and related social services to people detained in Arizona for immigration removal proceedings.",
+     "image" : "https://helpdetainedchildren.org/images/widget-13-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Florence",
+          "addressRegion": "AZ",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-13-302x182.jpg",
+      "sameAs": ["https://twitter.com/FlorenceProject", "https://www.facebook.com/FlorenceProject/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "AL OTRO LADO",
+	 			"url": "https://alotrolado.org/",
+		 		"description": "Al Otro Lado is a free U.S. legal services organization serving indigent deportees, migrants and refugees in Tijuana, Mexico.",
+     "image" : "https://helpdetainedchildren.org/images/widget-18-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Tijuana",
+          "addressRegion": "Baja California",
+          "addressCountry": "Mexico"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-18-302x182.jpg",
+      "sameAs": ["https://twitter.com/AlOtroLado_Org", "https://www.facebook.com/alotroladoinc/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+	 			"name": "TAHIRIH JUSTICE CENTER",
+ 				"url": "https://www.tahirih.org/",
+ 				"description": "The Tahirih Justice center provides free social and legal services to immigrant women seeking asylum in mutiple US locations.",
+     "image" : "https://helpdetainedchildren.org/images/widget-15-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-15-302x182.jpg",
+      "sameAs": ["https://twitter.com/tahirihjustice", "https://www.facebook.com/TahirihJusticeCenter/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "FAMILIES BELONG TOGETHER",
+	 			"url": "https://www.familiesbelongtogether.org/",
+ 				"description": "Families Belong Together fundraises for family reunification/activism against the US separation policy.",
+     "image" : "https://helpdetainedchildren.org/images/widget-3-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-3-302x182.jpg",
+      "sameAs": ["https://twitter.com/WomenBelong", "https://www.facebook.com/WeBelongTogetherUS/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "DETENTION WATCH NETWORK",
+     "url": "https://www.detentionwatchnetwork.org/",
+     "description": "Detention Watch Network is a national advocacy and activist organization that is working to end immigration detention.",
+     "image" : "https://helpdetainedchildren.org/images/widget-10-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-10-302x182.jpg",
+      "sameAs": ["https://twitter.com/detentionwatch", "https://www.facebook.com/DetentionWatchNetwork/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "BORDER ANGELS",
+			 	"url": "https://www.borderangels.org/",
+	 			"description": "Border Angels provides free humanitarian and legal services to migrants and refugees on the California/Mexico border.",
+     "image" : "https://helpdetainedchildren.org/images/widget-17-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-17-302x182.jpg",
+      "sameAs": ["https://twitter.com/border_angels", "https://www.facebook.com/BorderAngels/"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "GRASSROOTS LEADERSHIP",
+		 		"url": "https://grassrootsleadership.org/",
+	 			"description": "Grassroots Leadership is a civil and human rights organization based in Austin, TX fighting to end detention and deportation.",
+     "image" : "https://helpdetainedchildren.org/images/widget-11-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-11-302x182.jpg",
+      "sameAs": ["https://twitter.com/Grassroots_News"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "DE ANDA LAW FIRM",
+	 			"url": "https://www.deandalawfirm.com/",
+	 			"description": "The DeAndaLaw Firm provides free legal services to immigrants and asylum seekers, focusing on family reunification.",
+     "image" : "https://helpdetainedchildren.org/images/widget-6-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "Laredo",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-6-302x182.jpg",
+      "sameAs": ["https://twitter.com/ricardo_de_anda"]
+    },
+{
+      "@type": "Organization",
+      "parentOrganization": {
+          "name" : "HELP DETAINED CHILDREN"
+      },
+     "name": "DETAINED MIGRANT SOLIDARITY",
+		 		"url": "https://dmscelpaso.wixsite.com/dmscelpaso",
+		 		"description": "Detained Migrant Solidarity locates lost family, provides translaton, bail funds and legal referrals for detained migrants in El Paso, TX.",
+     "image" : "https://helpdetainedchildren.org/images/widget-7-302x182.jpg",
+     "address": {
+          "@type" : "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "USA"
+          },
+      "logo": "https://helpdetainedchildren.org/images/widget-7-302x182.jpg",
+      "sameAs": ["https://twitter.com/dmscelpaso"]
+    }
+     ]
+}
+</script>
+
+       <meta name="description" content="Help Detained Children is a directory of organizations working to reunite families that are separated and detained by ICE. How can you help too?" />
+        <meta name="keywords" content="immigration, detained, refugee, donate, volunteer, family, immigrant, immigrants, migrant, detained children, asylum, ICE, Trump, Jeff Sessions, family separation, reunite families, civil rights, US government, children in cages, border" />
+        <meta name="author" content="Help Detained Children">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="1 month">
+        <title>Help Detained Children | Help Reunite Detained and Separated Families</title>
+        <meta content="SeowojYCes76qUHufEZlzuOd0FxEhsurWFMTYhJHpmY" name="google-site-verification">
+	<link rel="canonical" href="https://helpdetainedchildren.org/">
+        
+	<!-- Facebook Open Graph -->
+	<meta content="Help Detained Children | Help Reunite Detained and Separated Families" property="og:title">
+        <meta content="Help Detained Children | Help Reunite Detained and Separated Families" property="og:site_name">
+	<meta content="»Help Detained Children is a directory of organizations working to reunite families that are separated and detained by ICE. How can you help too?" property="og:description">
+	<meta content="https://helpdetainedchildren.org" property="og:url">
+	<meta content="en_EN" property="og:locale">
+	<meta content="website" property="og:type">
+	<meta content="https://helpdetainedchildren.org/images/logohdc.png" property="og:image">
+        <meta content="helpdetainedchildren.org" name="og:image:alt">
+	
+	<!-- Twitter -->
+         <meta name="twitter:card" content="summary_large_image">
+         <meta name="twitter:site" content="@ThinkResist_X">
+         <meta name="twitter:title" content="Help Detained Children | Help Reunite Detained and Separated Families">
+         <meta name="twitter:description" content="Help Detained Children is a directory of organizations working to reunite families that are separated and detained by ICE. How can you help too?">
+         <meta name="twitter:image" content="https://helpdetainedchildren.org/images/logohdc.png">
+         <meta content="helpdetainedchildren.org" name="twitter:image:alt">
+
+        
+        <link type="text/plain" rel="author" href="{{ url}}/humans.txt">
+        
+
+	{% if page.mediaplayer == true %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="{{ url }}/assets/mediaelement_js/mediaelement-and-player.min.js"></script>
+		<link rel="stylesheet" href="{{ url }}/assets/mediaelement_js/mediaelementplayer.min.css">
+	{% endif %}
+
+	{% include _favicon.html %}
+
+	{% unless page.style == NULL %}
+	<style type="text/css">{{ page.style }}</style>
+	{% endunless %}
